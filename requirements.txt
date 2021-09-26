@@ -29,7 +29,7 @@ cytoolz==0.11.0
 debugpy==1.4.0
 diot==0.1.4
 distlib==0.3.3
-django = "*"
+django = 3.2.7
 enlighten==1.10.1
 entrypoints==0.3
 et-xmlfile==1.0.1
