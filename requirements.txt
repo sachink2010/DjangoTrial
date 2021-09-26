@@ -82,7 +82,6 @@ pylibjpeg-openjpeg==1.1.1
 pylibjpeg-rle==1.1.0
 pyparam==0.4.11
 pytest==6.2.3
-python_version==3.8
 python-simpleconf==0.4.0
 python-slugify==5.0.2
 PyYAML==5.4.1
