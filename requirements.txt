@@ -80,7 +80,6 @@ pylibjpeg==1.3.0
 pylibjpeg-libjpeg==1.2.0
 pylibjpeg-openjpeg==1.1.1
 pylibjpeg-rle==1.1.0
-pyodbc===4.0.0-unsupported
 pyparam==0.4.11
 pytest==6.2.3
 python_version==3.8
