@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sessions',
+    #'django.contrib.sessions.models.Session',
     'playground',
     #'debug_toolbar',
 ]
