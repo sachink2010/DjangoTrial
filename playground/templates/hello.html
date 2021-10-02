@@ -1,31 +1,26 @@
 <html>
     <body>
-<h1> Hello {{name}}!!
-</h1>
+        {%extends 'base.html'%}
+        {%block content%}
+            <h1> Hello {{name}}!!
+            </h1>
 
-<h1>Products</h1>
-<div class='row'>
-    <div class='col'>
-        <div class="card" style="width: 18rem;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Kiwi_aka.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h1>Products</h1>
+            <div class='row'>
+                {% for product in products%}
+                    <div class='col'>
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{product.image_url}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-text">${{product.price}}</p>
+                                <a href="#" class="btn btn-primary">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
             </div>
-          </div>
+        {% endblock %}
 
-    </div>
-
-
-</div>
-
-<ul>
-    {% for product in products%}
-    <li>{{product.name}} (${{product.price}})</li>
-    {%endfor%}
-
-
-</ul>
 </body>
 </html>
