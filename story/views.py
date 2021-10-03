@@ -12,5 +12,12 @@ def say_hello(request):
     #return render(request,'hello.html',{'name':'Sachin','products':products})
     return render(request,'hello.html',{'name':'Sachin'})
 
+def story(request):
+    #x=1
+    #y=2
+    #products=Product.objects.all()
+    #return render(request,'hello.html',{'name':'Sachin','products':products})
+    return render(request,'story.html')
+
     #return HttpResponse('Hello World')
 
