@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     #'django.contrib.sessions.models.Session',
     'playground',
+    'story',
     #'debug_toolbar',
 ]
 STATIC_URL = '/static/'
