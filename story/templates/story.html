@@ -1,17 +1,40 @@
 <html>
-    <body>
-        {%extends 'base.html'%}
-        {%block content%}
 
-            <h1>Natural Language Processing for creating a story</h1>
-            <p class="lead">
-                Adavnces in Natural Language Processing and artificial intelligence have made it possible for machines to excel also in creative task of story writing.
-              </p>
-            <div class='row'>
-                <div class="col"></div>
-                
-            </div>
-        {% endblock %}
+<body>
+    {%extends 'base.html'%} {%block content%}
 
+    <h1>Natural Language Processing for creating a story</h1>
+    <p class="lead">
+        Advances in NLP and AI have made it possible for machines to excel also in
+        creative tasks like story writing.
+    </p>
+
+    <label for="basic-url" class="form-label">Your idea/story: Please add 1-2 lines of text and click submit</label>
+
+    <form action="/story/" method="post">
+        <div class="input-group">
+            <textarea class="form-control" id="text1" aria-label="With textarea" value="{{request}}"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% for message in messages%}
+        <p>{{message}}</p>
+    {% endfor %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+            <tr>
+                <td colspan="2">
+                    <input type="submit" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    {% endblock %}
 </body>
+
 </html>
