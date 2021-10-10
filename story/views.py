@@ -21,9 +21,5 @@ def story(request):
             form.save()
             messages.success(request,'form has been saved successfully')
             return redirect ('/story/story',messages)
-
     return render(request,'story.html',{'form':form})
 
-    #return HttpResponse('Hello World')
-
-#def storyform()
