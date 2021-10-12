@@ -10,10 +10,10 @@ from .models import Story
 class StoryForm(forms.ModelForm):
     class Meta:
         model = Story
-        fields=['request','username']
+        fields=['user_input','username']
 
         widgets={
-            'request':forms.Textarea(attrs={'class':'form-control'}),
+            'user_input':forms.Textarea(attrs={'class':'form-control'}),
             'username':forms.TextInput(attrs={'class':'form-control'})
         }
     
