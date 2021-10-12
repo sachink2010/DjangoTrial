@@ -32,17 +32,7 @@ def story(request):
             print(f'username is,', {username})
             
             
-            response=requests.post(
-                "https://api.ai21.com/studio/v1/j1-jumbo/complete",
-                headers={"Authorization": "Bearer eNZ1QKmraxGN9f41ESRL6MZ9zLxzCOwE"},
-                json={
-                    "prompt": user_input, 
-                    "numResults": 1, 
-                    "maxTokens": 50, 
-                    "topKReturn": 0,
-                    "temperature": 0.7
-                    }
-                )
+            
             data = response.json()
             tokens = [t['generatedToken']['token'] for t in data['completions'][0]['data']['tokens']]
             response_text="".join(tokens).replace("▁"," ").replace("<|newline|>", "\n")
