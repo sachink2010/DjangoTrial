@@ -34,7 +34,7 @@ def story(request):
             user_input=dict['user_input']
             print(f'username is,', {username})
             jurassic_key=os.environ['JURASSIC_KEY']
-            print(jurassic_key)
+            #print(jurassic_key)
             
             response=requests.post(
                 "https://api.ai21.com/studio/v1/j1-jumbo/complete",
