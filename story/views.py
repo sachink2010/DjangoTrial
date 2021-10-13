@@ -4,6 +4,9 @@ from django.http import HttpResponse
 from django.contrib import messages
 from .forms import StoryForm
 import requests
+import os
+
+
 
 #from .models import Product
 
@@ -30,9 +33,20 @@ def story(request):
             username=dict['username']
             user_input=dict['user_input']
             print(f'username is,', {username})
+            jurassic_key=os.environ['JURASSIC_KEY']
+            print(jurassic_key)
             
-            
-            
+            response=requests.post(
+                "https://api.ai21.com/studio/v1/j1-jumbo/complete",
+                headers={"Authorization": jurassic_key},
+                json={
+                    "prompt": user_input, 
+                    "numResults": 1, 
+                    "maxTokens": 50, 
+                    "topKReturn": 0,
+                    "temperature": 0.7
+                    }
+                )
             data = response.json()
             tokens = [t['generatedToken']['token'] for t in data['completions'][0]['data']['tokens']]
             response_text="".join(tokens).replace("▁"," ").replace("<|newline|>", "\n")
