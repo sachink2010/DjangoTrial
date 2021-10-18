@@ -5,6 +5,8 @@ from django.contrib import messages
 from .forms import StoryForm
 import requests
 import os
+#from rest_framework.views import APIView
+
 
 
 
@@ -33,7 +35,8 @@ def story(request):
             username=dict['username']
             user_input=dict['user_input']
             print(f'username is,', {username})
-            jurassic_key=os.environ['JURASSIC_KEY']
+            #jurassic_key=os.environ['JURASSIC_KEY']
+            jurassic_key='Bearer eNZ1QKmraxGN9f41ESRL6MZ9zLxzCOwE'
             #print(jurassic_key)
             
             response=requests.post(
@@ -51,11 +54,17 @@ def story(request):
             tokens = [t['generatedToken']['token'] for t in data['completions'][0]['data']['tokens']]
             response_text="".join(tokens).replace("▁"," ").replace("<|newline|>", "\n")
             postform.api_response=response_text
-            print(response_text)
+            #form.cleaned_data['api_response']=response_text
+            #print(form.api_response)
+            #print(response_text)
             postform.save()
-            
+            response_text=user_input+ ''+response_text
             #form.save
             messages.success(request,'form has been saved successfully')
-            return redirect ('/story/story',messages,{'response_text':response_text})
+           
+            print('form is',form)
+            #return redirect('/story/story', {'form':form})
+            return render(request,'story.html', {'response_text':response_text, 'form':form})
+
     return render(request,'story.html',{'form':form})
 

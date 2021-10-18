@@ -13,8 +13,9 @@ class StoryForm(forms.ModelForm):
         fields=['user_input','username']
 
         widgets={
-            'user_input':forms.Textarea(attrs={'class':'form-control'}),
-            'username':forms.TextInput(attrs={'class':'form-control'})
+            'user_input':forms.TextInput(attrs={'class':'form-control'}),
+            'username':forms.TextInput(attrs={'class':'form-control'}),
+            #'api_response':forms.Textarea(attrs={'class':'form-control', 'disabled':'True'})
         }
     
     
