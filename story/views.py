@@ -15,12 +15,8 @@ import os
 # Create your views here.
 #https://www.youtube.com/watch?v=eLT2W7nnE28
 
-def say_hello(request):
-    #x=1
-    #y=2
-    #products=Product.objects.all()
-    #return render(request,'hello.html',{'name':'Sachin','products':products})
-    return render(request,'hello.html',{'name':'Sachin'})
+def intro(request):
+    return render(request,'intro.html',{'name':'Sachin'})
 
 def story(request):
     form=StoryForm(request.POST or None)
