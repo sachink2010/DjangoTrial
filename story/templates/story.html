@@ -1,7 +1,9 @@
 <html>
 
 <body>
-    {%extends 'base.html'%} {%block content%}
+    {%extends 'base.html'%}
+    {% load crispy_forms_tags %}
+    {%block content%}
 
     <h1>Natural Language Processing for a story</h1>
     <p class="lead">
@@ -9,29 +11,57 @@
         creative tasks like story writing.
     </p>
 
-
-  
-
     <label for="basic-url" class="form-label">Your idea/story: Please add 1-2 lines of text and click submit</label>
 
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <div class="form-control container">
+            <div class="row">
+                <div class="form-group col-md-12">
+                    {{form.user_input|as_crispy_field}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    {{form.username|as_crispy_field}}
+                </div>
+            </div>
+            <div class="row g-3">
+
+                <div class="mb-3">
+                    <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+                </div>
+            </div>
+            <div class="row g-3">
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+
+        </div>
+
+    </form>
+
+    <!-- 
     <div class='form-group'>
         <form action="" method="POST">
             {% csrf_token %}
-            {{form.as_p}}
-
+            {{form|crispy}}
             <button type="submit" class="btn btn-primary">Submit</button>
 
             </tr>
             </table>
         </form>
     </div>
-  
-
+-->
+    {% if response_text%}
     <p><b>Story Created by NLP program is</b></p>
 
     </p>{{response_text}} </p>
+    {% endif%}
 
-   
 
     {% endblock %}
 </body>

@@ -14,6 +14,7 @@ import os
 
 # Create your views here.
 #https://www.youtube.com/watch?v=eLT2W7nnE28
+#https://www.youtube.com/watch?v=iySjsCPgTPg
 
 def intro(request):
     return render(request,'intro.html',{'name':'Sachin'})

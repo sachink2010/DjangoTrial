@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     #'django.contrib.sessions.models.Session',
     'playground',
     'story',
+    'crispy_forms',
     #'debug_toolbar',
 ]
+CRISPY_TEMPLATE_PACK='bootstrap4'
 STATIC_URL = '/static/'
 
 MIDDLEWARE = [
