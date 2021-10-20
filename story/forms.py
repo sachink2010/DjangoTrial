@@ -13,7 +13,7 @@ class StoryForm(forms.ModelForm):
         fields=['user_input','username']
 
         widgets={
-            'user_input':forms.Textarea(attrs={'class':'form-control','help_text':'Please fill up 1-2 lines'}),
+            'user_input':forms.Textarea(attrs={'class':'form-control','rows':5}),
             'username':forms.TextInput(attrs={'class':'form-control'}),
             #'api_response':forms.Textarea(attrs={'class':'form-control', 'disabled':'True'})
         }
