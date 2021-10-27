@@ -32,6 +32,7 @@ def story(request):
             username=dict['username']
             user_input=dict['user_input']
             print(f'username is,', {username})
+
             jurassic_key=os.environ['JURASSIC_KEY']
             #print(jurassic_key)
             

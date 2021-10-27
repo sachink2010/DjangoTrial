@@ -13,8 +13,8 @@ class StoryForm(forms.ModelForm):
         fields=['user_input','username']
 
         widgets={
-            'user_input':forms.Textarea(attrs={'class':'form-control','rows':5,'id_for_label':"up to 200 chars"}),
-            'username':forms.TextInput(attrs={'class':'form-control'}),
+            'user_input':forms.Textarea(attrs={'class':'form-control','rows':5,'id_for_label':"up to 200 chars",'placeholder':'Please add 1-2 lines of your idea/story, your username and submit'}),
+            'username':forms.TextInput(attrs={'class':'form-control','placeholder':'Your name'}),
             #'api_response':forms.Textarea(attrs={'class':'form-control', 'disabled':'True'})
         }
     
