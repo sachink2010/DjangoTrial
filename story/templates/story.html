@@ -5,7 +5,7 @@
     {% load crispy_forms_tags %}
     {%block content%}
 
-    <h3>Create a story</h3>
+    <h3>AI Creates a story</h3>
     <!--
         <p class="lead">
         Advances in AI have made it possible for machines to excel also in
@@ -63,8 +63,10 @@
     {% if response_text%}
     <p><b>Story Created by NLP program is</b></p>
 
-    </p>{{response_text}} </p>
+    <p>{{form.data.user_input}} <mark>{{response_text}}</mark></p>
+
     {% endif%}
+    
 
 
     {% endblock %}

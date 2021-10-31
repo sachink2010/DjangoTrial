@@ -33,6 +33,7 @@ def story(request):
             user_input=dict['user_input']
             print(f'username is,', {username})
 
+
             jurassic_key=os.environ['JURASSIC_KEY']
             #print(jurassic_key)
             
@@ -44,7 +45,8 @@ def story(request):
                     "numResults": 1, 
                     "maxTokens": 50, 
                     "topKReturn": 0,
-                    "temperature": 0.7
+                    "temperature": 0.7,
+                    #"stopSequences": ["\n"],
                     }
                 )
             data = response.json()
@@ -55,11 +57,12 @@ def story(request):
             #print(form.api_response)
             #print(response_text)
             postform.save()
-            response_text=user_input+ ''+response_text
+            response_text=response_text
+            #form.cleaned_data['user_input']=response_text
             #form.save
             messages.success(request,'form has been saved successfully')
            
-            print('form is',form)
+            print('form is',form['user_input'])
             #return redirect('/story/story', {'form':form})
             return render(request,'story.html', {'response_text':response_text, 'form':form})
 
