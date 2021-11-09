@@ -3,3 +3,4 @@ whitenoise
 psycopg2-binary
 requests
 django-crispy-forms
+openai

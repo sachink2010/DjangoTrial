@@ -1,0 +1,75 @@
+<html>
+
+<body>
+    {%extends 'base.html'%}
+    {% load crispy_forms_tags %}
+    {%block content%}
+
+    <h3>AI writes code</h3>
+    <!--
+        <p class="lead">
+        Advances in AI have made it possible for machines to excel also in
+        creative tasks like story writing.
+    </p>
+    -->
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-control container">
+           <!-- <label for="describeform" class="form-label"> Please add 1-2 lines of your idea/story below and submit</label>
+           -->
+
+            <div class="row">
+
+                <div class="form-group col-md-12">
+                    {{form.user_input|as_crispy_field}}
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    {{form.username|as_crispy_field}}
+                </div>
+            </div>
+            <div class="row g-3">
+
+                <div class="mb-3">
+                    <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+                </div>
+            </div>
+            <div class="row g-3">
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+
+        </div>
+
+    </form>
+
+    <!-- 
+    <div class='form-group'>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+            </tr>
+            </table>
+        </form>
+    </div>
+-->
+    {% if response_text%}
+    <p><b>Story Created by NLP program is</b></p>
+
+    <p>{{form.data.user_input}} <mark>{{response_text}}</mark></p>
+
+    {% endif%}
+    
+
+
+    {% endblock %}
+</body>
+
+</html>

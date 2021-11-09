@@ -7,3 +7,10 @@ class Story(models.Model):
     #timestamp=models.DateTimeField
     created_at = models.DateTimeField(auto_now_add=True)
     username = models.CharField(max_length=200)
+
+class Code(models.Model):
+    user_input = models.CharField(max_length=600)
+    api_response = models.CharField(max_length=2000, null=True, blank=True)
+    #timestamp=models.DateTimeField
+    created_at = models.DateTimeField(auto_now_add=True)
+    username = models.CharField(max_length=200)
