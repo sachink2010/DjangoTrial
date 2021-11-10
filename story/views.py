@@ -5,6 +5,7 @@ from django.contrib import messages
 from .forms import StoryForm, CodeForm
 import requests
 import openai
+import os
 #from rest_framework.views import APIView
 
 
@@ -105,10 +106,6 @@ def code(request):
            
             data = response.choices[0].text
             print(data)
-            #tokens = [t['generatedToken']['token'] for t in data['completions'][0]['data']['tokens']]
-            #print(tokens)
-            #print("****************")
-            #print("".join(tokens).replace("▁"," ").replace("<|newline|>", "\n"))
             response_text=data
             print("****************")
 
