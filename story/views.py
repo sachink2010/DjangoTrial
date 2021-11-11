@@ -36,6 +36,7 @@ def story(request):
 
 
             jurassic_key=os.environ['JURASSIC_KEY']
+
             #print(jurassic_key)
             
             response=requests.post(
@@ -122,7 +123,7 @@ def code(request):
            
             #print('form is',form['user_input'])
             #return redirect('/story/story', {'form':form})
-            return render(request,'story.html', {'response_text':response_text, 'form':form})
+            return render(request,'code.html', {'response_text':response_text, 'form':form})
 
     return render(request,'code.html',{'form':form})
 
