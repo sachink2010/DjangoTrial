@@ -63,8 +63,7 @@
     {% if response_text%}
     <p><b>Code Created by NLP program is</b></p>
 
-    <pre>{{form.data.user_input}}</pre>
-    <pre>{{response_text}}</pre>
+    <pre>{{form.data.user_input}}<mark>{{response_text}}</pre>
     {% endif%}
     
 
