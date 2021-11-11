@@ -36,7 +36,6 @@ def story(request):
 
 
             jurassic_key=os.environ['JURASSIC_KEY']
-
             #print(jurassic_key)
             
             response=requests.post(
